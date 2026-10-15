@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
+<style>
+#target { cursor: pointer; }
+</style>
+<rect width="800" height="500" fill="#E6F7FF" />
+<text x="400" y="60" font-size="32" text-anchor="middle" fill="#333333">Click the Circle Game</text>
+<circle id="target" cx="400" cy="250" r="50" fill="#007BFF" />
+<text id="score" x="20" y="40" font-size="24" fill="#333333">Score: 0</text>
+<script>
+let score = 0;
+const target = document.getElementById("target");
+target.addEventListener("click",function() {
+score = score + 1;
+document.getElementById("score").textContent = "Score: " + score;
+target.setAttribute("cx", Math.random() * 700 +50);
+target.setAttribute("cy", Math.random() *400 +50);
+});
+</script>
+</svg>
